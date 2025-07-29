@@ -63,9 +63,8 @@ PYTHONPATH=src python src/scripts/train_predict_deberta.py --training_set "/data
 
 If you want to change the features used modify the feature_stance, feature_related, feature_all variables.
 
-### Contacts:
-If you have any questions please contact the authors.
-  * Robiert Sepúlveda Torres rsepulveda911112@gmail.com  
- 
+### Reference:
+Based on the original implementation: https://github.com/rsepulveda911112/Headline-Stance-Detection/tree/main/src
+
 ### License:
   * Apache License Version 2.0
