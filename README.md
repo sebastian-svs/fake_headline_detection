@@ -1,27 +1,28 @@
 # Headline-Stance-Detection
 
-**(2021/03/15) create readme **
+**(2025/01/29) Enhanced with DeBERTa v3 Large achieving 94.55% accuracy**
 
 ### Requirements
-* Python 3.6
-* Pytorch 
-* Transformers 3.1.0
-* Simpletransformers 0.47.5
+* Python 3.8
+* Pytorch 2.4.1
+* Transformers 4.46.3
+* Accelerate 1.0.1
 
 ### Installation
 * Create a Python Environment and activate it:
 ```bash 
-    virtualenv stance_detection --python=python3
+    virtualenv stance_detection --python=python3.8
     cd ./stance_detection
     source bin/activate
 ```
 * Install the required dependencies. 
-You need to have at least version 21.0.1 of pip installed. Next you may install requirements.txt.
+You need to have at least version 21.0.1 of pip installed. Next you may install requirements_deberta.txt.
 
 ```bash
 pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r requirements_deberta.txt
 ```
+
 ### Resource
 Download the FNC-dataset and the generatic summaries from this link:
 ```bash
@@ -29,7 +30,6 @@ wget -O data.zip "https://drive.google.com/uc?export=download&id=1b_8ZAlwOPpMsBP
 unzip data.zip
 rm data.zip
 ```
-
 
 ### Description of the parameters
 These parameters allow configuring the system to train or predict.
@@ -46,19 +46,19 @@ These parameters allow configuring the system to train or predict.
 #### Train and predict FNC-dataset "related" classification
 Execute this command to train and predict on the dataset in related classification
 ```bash
-PYTHONPATH=src python src/scripts/train_predict.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "related"
+PYTHONPATH=src python src/scripts/train_predict_deberta.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "related"
 ```
 
 #### Train and predict FNC-dataset "stance" classification
 Execute this command to train and predict on the dataset in stance classification
 ```bash
-PYTHONPATH=src python src/scripts/train_predict.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "stance"
+PYTHONPATH=src python src/scripts/train_predict_deberta.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "stance"
 ```
 
 #### Train and predict FNC-dataset "all" classification
 Execute this command to train and predict on the dataset in all classification
 ```bash
-PYTHONPATH=src python src/scripts/train_predict.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "all"
+PYTHONPATH=src python src/scripts/train_predict_deberta.py --training_set "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json" --test_set "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json" --type_class "all"
 ```
 
 If you want to change the features used modify the feature_stance, feature_related, feature_all variables.
@@ -68,4 +68,4 @@ If you have any questions please contact the authors.
   * Robiert Sepúlveda Torres rsepulveda911112@gmail.com  
  
 ### License:
-  * Apache License Version 2.0 
+  * Apache License Version 2.0
