@@ -1,0 +1,47 @@
+{
+  "os":  "Windows-10-10.0.26100-SP0",
+  "python":  "CPython 3.8.20",
+  "startedAt":  "2025-07-01T08:12:00.551640Z",
+  "args":  [
+    "--training_set",
+    "/data/FNC_summy_textRank_train_spacy_pipeline_polarity_v2.json",
+    "--test_set",
+    "/data/FNC_summy_textRank_test_spacy_pipeline_polarity_v2.json",
+    "--type_class",
+    "all",
+    "--use_cuda"
+  ],
+  "program":  "src/scripts/train_predict_deberta.py",
+  "codePath":  "src\\scripts\\train_predict_deberta.py",
+  "root":  "C:\\Users\\sv-st\\Documents\\Code\\Headline-Stance-Detection-main",
+  "host":  "arigto",
+  "executable":  "C:\\Users\\sv-st\\anaconda3\\envs\\deberta\\python.exe",
+  "codePathLocal":  "src\\scripts\\train_predict_deberta.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "gpu":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "1021821579264",
+      "used":  "658480484352"
+    }
+  },
+  "memory":  {
+    "total":  "29797376000"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  16
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "memoryTotal":  "6439305216",
+      "cudaCores":  2560,
+      "architecture":  "Ada",
+      "uuid":  "GPU-ac233538-8491-4211-9c63-4f76de593f88"
+    }
+  ],
+  "cudaVersion":  "12.6"
+}
